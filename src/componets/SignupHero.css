@@ -6,7 +6,7 @@
 }
 
 .signupHeroContainer {
-    width: 90%;
+    width: 50%;
     display: flex;
     height: 100%;
 }
@@ -89,6 +89,7 @@
     height: 11px;
     margin-right: 5px;
     min-width: 17px;
+    cursor: pointer;
 }
 
 .checkbox1,
@@ -136,6 +137,14 @@
     color: white;
 }
 
+.disabled {
+    height: 30px;
+    background-color: #bfbfbf;
+    border: none;
+    border-radius: 5px;
+    color: rgb(238, 238, 238);
+}
+
 .showeye {
     display: flex;
     align-items: center;
@@ -143,4 +152,20 @@
 
 .showeye p {
     font-size: 11px;
+}
+
+@media (max-width:1266px) {
+    .signupHeroContainer {
+        width: 90%;
+    }
+}
+
+@media (max-width:600px) {
+    .imageContainer {
+        display: none;
+    }
+
+    .textContainer {
+        width: 100%;
+    }
 }

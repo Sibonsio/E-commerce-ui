@@ -1,5 +1,6 @@
 import './SignupBar.css'
 import image from '../assets/Logo.svg'
+import { Link } from 'react-router-dom'
 
 const SignupBar = () => {
     return (
@@ -12,8 +13,8 @@ const SignupBar = () => {
                 <div className='login'>
                     <p className='language'>{`English (United States)`}</p>
                     <nav className='buttons'>
-                        <button className='loginbtn'>Login</button>
-                        <button className='signupbtn'>Sign Up</button>
+                        <button className='loginbtn'><Link className='link-item1' to={'/signin'}>Login</Link></button>
+                        <button className='signupbtn'><Link className='link-item2' to={'/signup'}>Sign Up</Link></button>
                     </nav>
                 </div>
             </div>

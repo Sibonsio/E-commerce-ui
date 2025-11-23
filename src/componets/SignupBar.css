@@ -82,3 +82,31 @@
 .logo {
     cursor: pointer;
 }
+
+.link-item1,
+.link-item2 {
+    text-decoration: none;
+}
+
+.link-item2 {
+    color: white;
+
+}
+
+.link-item1 {
+    color: #8A33FD;
+
+}
+
+@media (max-width:1266px) {
+
+    .input,
+    .language {
+        display: none;
+    }
+
+    .login {
+        justify-content: flex-end;
+    }
+
+}
