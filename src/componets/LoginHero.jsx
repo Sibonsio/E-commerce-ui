@@ -90,7 +90,7 @@ const SigninHero = () => {
                     </div>
                     <div className='buttonContainer'>
                         <button className={!password || !email ? 'disabled' : 'submitbtn'} disabled={!password || !email} >Sign In  {/*isWidth*/}</button>
-                        <p className='loginText'>Don't have an account? <a href={'signup'} replace>Sign Up</a></p>
+                        <p className='loginText'>Don't have an account? <Link to={'/signup'}>Sign Up</Link></p>
                     </div>
                 </form>
             </div>

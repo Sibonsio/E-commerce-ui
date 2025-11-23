@@ -3,7 +3,7 @@ import image from '../assets/image.png'
 import See from '../assets/See.svg'
 import Hide from '../assets/Hide.svg'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignupHero = () => {
@@ -28,6 +28,8 @@ const SignupHero = () => {
     const [sub, setSubs] = useState(false)
     // and error message
     const [errMsg, setErrMsg] = useState('')
+
+    const navigate = useNavigate()
 
     /*const [isWidth, setWidth] = useState(window.innerWidth);*/
     const handleHide = () => {
@@ -57,6 +59,7 @@ const SignupHero = () => {
             terms: terms,
             sub: sub
         })
+        navigate('/signin', { replace: true })
         setEmail('')
         setPassword('')
         setTerms(false)
@@ -148,7 +151,7 @@ const SignupHero = () => {
                     </div>
                     <div className='buttonContainer'>
                         <button className={!password || !email || !validEmail || !validPassword || !terms || !sub ? 'disabled' : 'submitbtn'} disabled={!password || !email || !validEmail || !validPassword || !terms || !sub} >Sign Up  {/*isWidth*/}</button>
-                        <p className='loginText'>Already have an account? <a href={'signin'} >Log in</a></p>
+                        <p className='loginText'>Already have an account? <Link to={'/signin'} >Log in</Link></p>
                     </div>
                 </form>
             </div>
