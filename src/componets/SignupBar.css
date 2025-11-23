@@ -1,0 +1,84 @@
+.signupBar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #adadad;
+}
+
+.signupContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 30px;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+
+.search {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.input {
+    width: 200px;
+    border: none;
+    background-color: #F6F6F6;
+    background-image: url(../assets/search.svg);
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 15px;
+    background-position-x: 60px;
+    background-position-y: center;
+    color: #333333;
+}
+
+.input:focus {
+    outline: none;
+    background-image: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.loginbtn {
+    background-color: white;
+    border: 1px solid #3C4242;
+    border-radius: 5px;
+    color: #8A33FD;
+    width: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+}
+
+.signupbtn {
+    background-color: #8A33FD;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 120px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+}
+
+.language {
+    font-size: 11px;
+    color: #333333;
+}
+
+.logo {
+    cursor: pointer;
+}
