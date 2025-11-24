@@ -14,7 +14,7 @@ const SignupBar = () => {
                 <div className='login'>
                     <p className='language'>{`English (United States)`}</p>
                     <nav className='buttons'>
-                        <button className={location.pathname === '/signin' ? `signupbtn` : `loginbtn`}><Link className={location.pathname === '/signin' ? 'link-item2' : 'link-item1'} to={'/signin'}>Login</Link></button>
+                        <button className={location.pathname === '/' ? `signupbtn` : `loginbtn`}><Link className={location.pathname === '/' ? 'link-item2' : 'link-item1'} to={'/'}>Login</Link></button>
                         <button className={location.pathname === '/signup' ? `signupbtn` : `loginbtn`}><Link className={location.pathname === '/signup' ? 'link-item2' : 'link-item1'} to={'/signup'}>Sign Up</Link></button>
                     </nav>
                 </div>

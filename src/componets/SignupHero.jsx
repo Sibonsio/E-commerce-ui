@@ -59,7 +59,7 @@ const SignupHero = () => {
             terms: terms,
             sub: sub
         })
-        navigate('/signin', { replace: true })
+        navigate('/', { replace: true })
         setEmail('')
         setPassword('')
         setTerms(false)
@@ -151,7 +151,7 @@ const SignupHero = () => {
                     </div>
                     <div className='buttonContainer'>
                         <button className={!password || !email || !validEmail || !validPassword || !terms || !sub ? 'disabled' : 'submitbtn'} disabled={!password || !email || !validEmail || !validPassword || !terms || !sub} >Sign Up  {/*isWidth*/}</button>
-                        <p className='loginText'>Already have an account? <Link to={'/signin'} >Log in</Link></p>
+                        <p className='loginText'>Already have an account? <Link to={'/'} >Log in</Link></p>
                     </div>
                 </form>
             </div>
