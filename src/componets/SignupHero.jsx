@@ -18,7 +18,7 @@ const SignupHero = () => {
     const userRef = useRef()
     const errRef = useRef()
     //states for firstname
-    const [firstname, setFirstname] = useState('')
+    const [fullname, setFirstname] = useState('')
     const [validFirstname, setValidFirstname] = useState(false)
     const [onFirstnameFocus, setFirstnameFocus] = useState(false)
     // states for a email 
@@ -49,9 +49,9 @@ const SignupHero = () => {
     }, [])
     //useEffect for valid firstname
     useEffect(() => {
-        const results = NAME_REGEX.test(firstname)
+        const results = NAME_REGEX.test(fullname)
         setValidFirstname(results)
-    }, [firstname])
+    }, [fullname])
     //useEffect for valid email
     useEffect(() => {
         const results = EMAIL_REGEX.test(email)
@@ -65,6 +65,7 @@ const SignupHero = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log({
+            fullname: fullname,
             email: email,
             password: password,
             terms: terms,
@@ -102,29 +103,29 @@ const SignupHero = () => {
                             Fullname
                         </label>
                         <input
+                            ref={userRef}
                             id='firstname'
                             required
                             autoComplete='off'
                             type='text'
                             onChange={(e) => { setFirstname(e.target.value) }}
-                            value={firstname}
+                            value={fullname}
                             aria-invalid={validFirstname ? true : false}
                             aria-describedby='nameError'
                             onFocus={() => { setFirstnameFocus(true) }}
                             onBlur={() => { setFirstnameFocus(false) }} />
-                        <p id='nameError'>{firstname && !validFirstname && onFirstnameFocus && 'Invalid email fullname'}</p>
+                        <p id='nameError'>{fullname && !validFirstname && onFirstnameFocus && 'Invalid email fullname'}</p>
                     </div>
                     <div className='emailContainer'>
                         <label htmlFor='email'>
                             Email Address
                         </label>
                         <input
-                            ref={userRef}
                             id='email'
                             required
                             autoComplete='off'
                             type='text'
-                            onChange={(e) => { setEmail(e.target.value) }}
+                            onChange={(e) => { setEmail((e.target.value).toLocaleLowerCase()) }}
                             value={email}
                             aria-invalid={validEmail ? true : false}
                             aria-describedby='emailError'
@@ -178,7 +179,7 @@ const SignupHero = () => {
                         </div>
                     </div>
                     <div className='buttonContainer'>
-                        <button className={!password || !email || !validEmail || !validPassword || !terms || !sub ? 'disabled' : 'submitbtn'} disabled={!password || !email || !validEmail || !validPassword || !terms || !sub} >Sign Up  {/*isWidth*/}</button>
+                        <button className={!fullname || !password || !email || !validEmail || !validPassword || !terms || !sub || !validFirstname ? 'disabled' : 'submitbtn'} disabled={!fullname || !validFirstname || !password || !email || !validEmail || !validPassword || !terms || !sub} >Sign Up  {/*isWidth*/}</button>
                         <p className='loginText'>Already have an account? <Link to={'/'} >Log in</Link></p>
                     </div>
                 </form>
