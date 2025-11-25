@@ -58,20 +58,23 @@
 }
 
 .emailContainer,
-.passwordContainer {
+.passwordContainer,
+.nameContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .emailContainer label,
-.passwordContainer label {
+.passwordContainer label,
+.nameContainer label {
     font-size: 12px;
     color: #333333;
 }
 
 #email,
-#password {
+#password,
+#firstname {
     height: 40px;
     margin-bottom: 20px;
     border: 1px solid #666666;
@@ -120,7 +123,8 @@
 }
 
 #emailError,
-#passwordError {
+#passwordError,
+#nameError {
     font-size: 12px;
     color: red;
 }

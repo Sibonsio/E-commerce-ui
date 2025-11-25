@@ -11,10 +11,16 @@ const SignupHero = () => {
 
     const EMAIL_REGEX = /^(?=.{5,50}$)[^\s@]+@[^\s@]+\.[^\s@]+$/
     const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    const NAME_REGEX = /^(?=.{1,60}$)[\p{L}]+(?:[ '-][\p{L}]+)+$/u
+
 
     //refs for the screen and error message
     const userRef = useRef()
     const errRef = useRef()
+    //states for firstname
+    const [firstname, setFirstname] = useState('')
+    const [validFirstname, setValidFirstname] = useState(false)
+    const [onFirstnameFocus, setFirstnameFocus] = useState(false)
     // states for a email 
     const [email, setEmail] = useState('')
     const [validEmail, setValidEmail] = useState(false)
@@ -41,6 +47,11 @@ const SignupHero = () => {
     useEffect(() => {
         userRef.current.focus()
     }, [])
+    //useEffect for valid firstname
+    useEffect(() => {
+        const results = NAME_REGEX.test(firstname)
+        setValidFirstname(results)
+    }, [firstname])
     //useEffect for valid email
     useEffect(() => {
         const results = EMAIL_REGEX.test(email)
@@ -86,6 +97,23 @@ const SignupHero = () => {
                     <p className='subtitle'>Sign up for free to accesss to in any of our products</p>
                 </div>
                 <form className='form' onSubmit={handleSubmit}>
+                    <div className='nameContainer'>
+                        <label htmlFor='firstname'>
+                            Fullname
+                        </label>
+                        <input
+                            id='firstname'
+                            required
+                            autoComplete='off'
+                            type='text'
+                            onChange={(e) => { setFirstname(e.target.value) }}
+                            value={firstname}
+                            aria-invalid={validFirstname ? true : false}
+                            aria-describedby='nameError'
+                            onFocus={() => { setFirstnameFocus(true) }}
+                            onBlur={() => { setFirstnameFocus(false) }} />
+                        <p id='nameError'>{firstname && !validFirstname && onFirstnameFocus && 'Invalid email fullname'}</p>
+                    </div>
                     <div className='emailContainer'>
                         <label htmlFor='email'>
                             Email Address
@@ -99,7 +127,7 @@ const SignupHero = () => {
                             onChange={(e) => { setEmail(e.target.value) }}
                             value={email}
                             aria-invalid={validEmail ? true : false}
-                            aria-describedby='emailErr'
+                            aria-describedby='emailError'
                             onFocus={() => { setEmailFocus(true) }}
                             onBlur={() => { setEmailFocus(false) }} />
                         <p id='emailError'>{email && !validEmail && onEmailFocus && 'Invalid email address'}</p>
@@ -120,7 +148,7 @@ const SignupHero = () => {
                             onChange={(e) => { setPassword(e.target.value) }}
                             value={password}
                             aria-invalid={validPassword ? true : false}
-                            aria-describedby='passwordErr'
+                            aria-describedby='passwordError'
                             onFocus={() => { setPasswordFocus(true) }}
                             onBlur={() => { setPasswordFocus(false) }} />
 
