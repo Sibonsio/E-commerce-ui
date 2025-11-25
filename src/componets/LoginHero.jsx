@@ -4,12 +4,14 @@ import See from '../assets/See.svg'
 import Hide from '../assets/Hide.svg'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import instance from '../config/axios/axios.jsx'
+import AuthHook from '../hooks/authHook.jsx'
 
 const SigninHero = () => {
     const [isHide, setHide] = useState(false)
     //refs for the screen and error message
     const userRef = useRef()
-    const errRef = useRef()
+
     // states for a email 
     const [email, setEmail] = useState('')
     // and password
@@ -17,8 +19,10 @@ const SigninHero = () => {
 
     // and error message
     const [errMsg, setErrMsg] = useState('')
+    const [showError, setShowError] = useState(false)
 
-    /*const [isWidth, setWidth] = useState(window.innerWidth);*/
+    //auth hook
+    const { setAuth } = AuthHook()
     const handleHide = () => {
         setHide((prev) => {
             return !prev
@@ -31,23 +35,31 @@ const SigninHero = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log({
-            email: email,
-            password: password,
-        })
-        setEmail('')
-        setPassword('')
-    }
-    /*useEffect(() => {
-        const handleWidth = () => {
-            setWidth(window.innerWidth)
-        };
-        window.addEventListener('resize', handleWidth);
 
-        return () => {
-            window.removeEventListener('resize', handleWidth)
+        try {
+            const response = await instance.post('/login', JSON.stringify({ email, password }),
+                { headers: { 'Content-Type': 'application/json' }, withCredentials: true })
+            setEmail('')
+            setPassword('')
+            setAuth(response.data)
+        } catch (error) {
+            if (error?.response) {
+                setShowError(true)
+                setErrMsg('Server Error')
+            }
+            else if (error?.response?.status === 400) {
+                setShowError(true)
+                setErrMsg('Invalid email or passord')
+            }
+            else {
+                setShowError(true)
+                setErrMsg(error.message)
+            }
+
         }
-    }, [isWidth])*/
+
+    }
+
     return (<section className='signupHero'>
         <div className='signupHeroContainer'>
             <div className='imageContainer'>
@@ -55,12 +67,13 @@ const SigninHero = () => {
             </div>
             <div className='textContainer'>
                 <div className='text'>
+                    {showError && <p className='errMessage'>{errMsg}</p>}
                     <h1 className='title'>Sign In</h1>
                 </div>
                 <form className='form' onSubmit={handleSubmit}>
                     <div className='emailContainer'>
                         <label htmlFor='email'>
-                            Username or Email Address
+                            Email Address
                         </label>
                         <input
                             ref={userRef}

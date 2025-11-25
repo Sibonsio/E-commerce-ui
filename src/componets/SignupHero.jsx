@@ -5,6 +5,7 @@ import Hide from '../assets/Hide.svg'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import instance from '../config/axios/axios.jsx'
+import authHook from '../hooks/authHook.jsx'
 
 
 const SignupHero = () => {
@@ -17,7 +18,9 @@ const SignupHero = () => {
 
     //refs for the screen and error message
     const userRef = useRef()
-    const errRef = useRef()
+
+
+
     //states for firstname
     const [fullname, setFirstname] = useState('')
     const [validFirstname, setValidFirstname] = useState(false)
@@ -82,7 +85,7 @@ const SignupHero = () => {
             navigate('/signin', { replace: true })
             console.log(response.data)
         } catch (error) {
-            errRef.current.focus()
+
             if (!error?.response) {
                 setShowError(true)
                 setErrMsg('Server Error')
