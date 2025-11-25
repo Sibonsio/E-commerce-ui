@@ -2,7 +2,7 @@
     background-color: white;
     display: flex;
     justify-content: center;
-    height: 700px;
+    height: 810px;
 }
 
 .signupHeroContainer {
@@ -156,6 +156,18 @@
 
 .showeye p {
     font-size: 11px;
+}
+
+.errMessage {
+    text-align: center;
+    background-color: rgb(242, 183, 183);
+    color: rgb(255, 25, 25);
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 5px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
 }
 
 @media (max-width:1266px) {

@@ -4,6 +4,7 @@ import See from '../assets/See.svg'
 import Hide from '../assets/Hide.svg'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import instance from '../config/axios/axios.jsx'
 
 
 const SignupHero = () => {
@@ -31,9 +32,10 @@ const SignupHero = () => {
     const [onPasswordFocus, setPasswordFocus] = useState(false)
     //state for checkboxes
     const [terms, setTerms] = useState(false)
-    const [sub, setSubs] = useState(false)
+    const [subscribe, setSubs] = useState(false)
     // and error message
     const [errMsg, setErrMsg] = useState('')
+    const [showError, setShowError] = useState(false)
 
     const navigate = useNavigate()
 
@@ -62,20 +64,42 @@ const SignupHero = () => {
         const results = PASSWORD_REGEX.test(password)
         setValidPassword(results)
     }, [password])
+    //error message
+    useEffect(() => {
+        setShowError(false)
+        setErrMsg('')
+    }, [fullname, email, password])
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log({
-            fullname: fullname,
-            email: email,
-            password: password,
-            terms: terms,
-            sub: sub
-        })
-        navigate('/', { replace: true })
-        setEmail('')
-        setPassword('')
-        setTerms(false)
-        setSubs(false)
+
+        try {
+            const response = await instance.post('/register', JSON.stringify({ fullname, email, password, terms, subscribe }),
+                { headers: { 'Content-Type': 'application/json' }, withCredentials: true })
+            setEmail('')
+            setPassword('')
+            setTerms(false)
+            setSubs(false)
+            navigate('/signin', { replace: true })
+            console.log(response.data)
+        } catch (error) {
+            errRef.current.focus()
+            if (!error?.response) {
+                setShowError(true)
+                setErrMsg('Server Error')
+            }
+            else if (error?.response?.status === 400) {
+                setShowError(true)
+                setErrMsg('Email already exists')
+                console.log(error.response)
+            }
+            else {
+                setShowError(true)
+                setErrMsg(error.message)
+                console.log(error.response)
+            }
+        }
+
+
     }
     /*useEffect(() => {
         const handleWidth = () => {
@@ -88,12 +112,14 @@ const SignupHero = () => {
         }
     }, [isWidth])*/
     return (<section className='signupHero'>
+
         <div className='signupHeroContainer'>
             <div className='imageContainer'>
                 <img className='image' alt='image' src={image} />
             </div>
             <div className='textContainer'>
                 <div className='text'>
+                    {showError && <p className='errMessage'>{errMsg}</p>}
                     <h1 className='title'>Sign Up</h1>
                     <p className='subtitle'>Sign up for free to accesss to in any of our products</p>
                 </div>
@@ -174,13 +200,13 @@ const SignupHero = () => {
                                 onChange={(e) => {
                                     setSubs(e.target.checked)
                                 }}
-                                checked={sub} />
+                                checked={subscribe} />
                             <p className='checkbox2Text'>Subscibe ro our monthly newsletter</p>
                         </div>
                     </div>
                     <div className='buttonContainer'>
-                        <button className={!fullname || !password || !email || !validEmail || !validPassword || !terms || !sub || !validFirstname ? 'disabled' : 'submitbtn'} disabled={!fullname || !validFirstname || !password || !email || !validEmail || !validPassword || !terms || !sub} >Sign Up  {/*isWidth*/}</button>
-                        <p className='loginText'>Already have an account? <Link to={'/'} >Log in</Link></p>
+                        <button className={!fullname || !password || !email || !validEmail || !validPassword || !terms || !subscribe || !validFirstname ? 'disabled' : 'submitbtn'} disabled={!fullname || !validFirstname || !password || !email || !validEmail || !validPassword || !terms || !subscribe} >Sign Up  {/*isWidth*/}</button>
+                        <p className='loginText'>Already have an account? <Link to={'/signin'} >Log in</Link></p>
                     </div>
                 </form>
             </div>
