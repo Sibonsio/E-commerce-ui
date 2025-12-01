@@ -10,7 +10,7 @@ const SignupBar = () => {
     return (
         <section className='signupBar'>
             <div className='signupContainer'>
-                <div className='search'>
+                <div className={`search ${location.pathname !== '/signin' && location.pathname !== '/signup' && 'increaseWidth'}`}>
                     <img className='logo' alt='logo' src={image} />
                     <nav className={`navbar ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'} `}>
                         <ul className='navItemContainer'>
@@ -22,7 +22,7 @@ const SignupBar = () => {
                         </ul>
                     </nav>
                 </div>
-                <div className='login'>
+                <div className={`login ${location.pathname !== '/signin' && location.pathname !== '/signup' && 'reduceWidth'}`}>
                     <input className='input' type='text' placeholder='Search' />
                     <div className='buttons'>
                         <div className={`usercartContainer ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'}`}><img className='usercartLogo' src={heart} /></div>
