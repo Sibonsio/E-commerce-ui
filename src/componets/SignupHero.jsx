@@ -42,7 +42,7 @@ const SignupHero = () => {
 
     const navigate = useNavigate()
 
-    /*const [isWidth, setWidth] = useState(window.innerWidth);*/
+
     const handleHide = () => {
         setHide((prev) => {
             return !prev
@@ -104,16 +104,6 @@ const SignupHero = () => {
 
 
     }
-    /*useEffect(() => {
-        const handleWidth = () => {
-            setWidth(window.innerWidth)
-        };
-        window.addEventListener('resize', handleWidth);
-
-        return () => {
-            window.removeEventListener('resize', handleWidth)
-        }
-    }, [isWidth])*/
     return (<section className='signupHero'>
 
         <div className='signupHeroContainer'>

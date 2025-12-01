@@ -45,13 +45,14 @@
 .navItemContainer {
     display: flex;
     align-items: center;
-    gap: 100px
+    gap: 80px
 }
 
 .navLinkItems {
     text-decoration: none;
     color: #807D7E;
     font-size: 14px;
+
 }
 
 .usercartContainer {
@@ -92,6 +93,7 @@
 
 .buttons {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -148,15 +150,62 @@
     display: none;
 }
 
-@media (max-width:1266px) {
+.searchbtn {
+    display: none;
+}
 
-    .input,
-    .language {
-        display: none;
+.searchbtncolor {
+    background-color: white;
+}
+
+.logoContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu {
+    cursor: pointer;
+    color: #adadad;
+}
+
+.hidemenu {
+    display: none;
+}
+
+@media (max-width:1266px) {
+    .input {
+        display: none
     }
 
     .login {
-        justify-content: flex-end;
+        justify-content: space-between;
+        width: 20%;
+        gap: 10px;
     }
 
+    .search {
+        width: 80%;
+    }
+
+
+
+
+
+}
+
+@media (max-width:1090px) {
+    .navbar {
+        display: none;
+    }
+
+    .search {
+        width: 50%;
+    }
+
+    .login {
+        width: 50%;
+        justify-content: flex-end;
+    }
 }
