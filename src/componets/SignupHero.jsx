@@ -5,7 +5,7 @@ import Hide from '../assets/Hide.svg'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import instance from '../config/axios/axios.jsx'
-import authHook from '../hooks/authHook.jsx'
+
 
 
 const SignupHero = () => {

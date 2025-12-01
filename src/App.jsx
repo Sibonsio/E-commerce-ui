@@ -6,14 +6,12 @@ import SignupHero from './componets/SignupHero.jsx'
 
 
 const App = () => {
-
-
   return (
     <>
       <Routes>
         <Route path='/' element={<SignLayout />}>
           <Route path='/signin' element={<SigninHero />} />
-          <Route path='signup' element={<SignupHero />} />
+          <Route path='/signup' element={<SignupHero />} />
         </Route>
       </Routes>
     </>

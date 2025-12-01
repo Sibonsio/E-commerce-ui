@@ -22,7 +22,7 @@ const SigninHero = () => {
     const [showError, setShowError] = useState(false)
 
     //auth hook
-    const { setAuth } = AuthHook()
+    const { auth, setAuth } = AuthHook()
     const handleHide = () => {
         setHide((prev) => {
             return !prev
@@ -32,6 +32,12 @@ const SigninHero = () => {
     useEffect(() => {
         userRef.current.focus()
     }, [])
+    // for error message
+    useEffect(() => {
+        setErrMsg('')
+        setShowError(false)
+    }, [email, password])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -43,7 +49,7 @@ const SigninHero = () => {
             setPassword('')
             setAuth(response.data)
         } catch (error) {
-            if (error?.response) {
+            if (!error?.response) {
                 setShowError(true)
                 setErrMsg('Server Error')
             }
@@ -59,6 +65,9 @@ const SigninHero = () => {
         }
 
     }
+    useEffect(() => {
+        console.log(auth)
+    }, [auth])
 
     return (<section className='signupHero'>
         <div className='signupHeroContainer'>

@@ -11,20 +11,55 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    height: 30px;
+    height: 35px;
 }
 
 .login {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 600px;
+    width: 30%;
 }
 
 .search {
     display: flex;
-    width: 500px;
-    justify-content: space-between;
+    width: 70%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 230px;
+}
+
+.nav-items {
+    list-style: none;
+
+}
+
+.navItemContainer {
+    display: flex;
+    align-items: center;
+    gap: 100px
+}
+
+.navLinkItems {
+    text-decoration: none;
+    color: #807D7E;
+    font-size: 15px;
+}
+
+.usercartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 5px;
+}
+
+.usercartLogo {
+    height: 15px;
+    width: 15px;
 }
 
 .input {
@@ -38,6 +73,8 @@
     background-position-x: 60px;
     background-position-y: center;
     color: #333333;
+    height: 35px;
+    border-radius: 5px;
 }
 
 .input:focus {
@@ -47,7 +84,7 @@
 
 .buttons {
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
 .loginbtn {
@@ -81,6 +118,7 @@
 
 .logo {
     cursor: pointer;
+    height: 100%;
 }
 
 .link-item1,
@@ -96,6 +134,10 @@
 .link-item1 {
     color: #8A33FD;
 
+}
+
+.remove {
+    display: none;
 }
 
 @media (max-width:1266px) {
