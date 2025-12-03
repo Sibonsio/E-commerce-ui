@@ -25,14 +25,14 @@ const SignupBar = () => {
         <section className='signupBar'>
             <div className='signupContainer'>
                 <div className={`search ${location.pathname !== '/signin' && location.pathname !== '/signup' && 'increaseWidth'}`}>
-                    <div className='logoContainer'><img className='logo' alt='logo' src={image} /></div>
+                    <div className='logoContainer'><Link to='/'><img className='logo' alt='logo' src={image} /></Link></div>
                     <nav className={`navbar ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'} `}>
                         <ul className='navItemContainer'>
                             <li className='nav-items'><Link className='navLinkItems' to='/'>Shop</Link></li>
-                            <li className='nav-items'><Link className='navLinkItems'>Men</Link></li>
-                            <li className='nav-items'><Link className='navLinkItems'>Women</Link></li>
-                            <li className='nav-items'><Link className='navLinkItems'>Combos</Link></li>
-                            <li className='nav-items'><Link className='navLinkItems'>Joggers</Link></li>
+                            <li className='nav-items'><Link className='navLinkItems' to='/men'>Men</Link></li>
+                            <li className='nav-items'><Link className='navLinkItems' to='/women'>Women</Link></li>
+                            <li className='nav-items'><Link className='navLinkItems' to='/combos'>Combos</Link></li>
+                            <li className='nav-items'><Link className='navLinkItems' to='/joggers'>Joggers</Link></li>
                         </ul>
                     </nav>
                 </div>
