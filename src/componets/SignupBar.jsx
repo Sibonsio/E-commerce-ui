@@ -25,7 +25,7 @@ const SignupBar = () => {
         <section className='signupBar'>
             <div className='signupContainer'>
                 <div className={`search ${location.pathname !== '/signin' && location.pathname !== '/signup' && 'increaseWidth'}`}>
-                    <div className='logoContainer'><Link to='/'><img className='logo' alt='logo' src={image} /></Link></div>
+                    <div className='logoContainer'><Link className='logolink' to='/'><img className='logo' alt='logo' src={image} /></Link></div>
                     <nav className={`navbar ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'} `}>
                         <ul className='navItemContainer'>
                             <li className='nav-items'><Link className='navLinkItems' to='/'>Shop</Link></li>
