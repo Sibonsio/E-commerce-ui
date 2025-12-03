@@ -28,7 +28,7 @@ const SignupBar = () => {
                     <div className='logoContainer'><img className='logo' alt='logo' src={image} /></div>
                     <nav className={`navbar ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'} `}>
                         <ul className='navItemContainer'>
-                            <li className='nav-items'><Link className='navLinkItems'>Shop</Link></li>
+                            <li className='nav-items'><Link className='navLinkItems' to='/'>Shop</Link></li>
                             <li className='nav-items'><Link className='navLinkItems'>Men</Link></li>
                             <li className='nav-items'><Link className='navLinkItems'>Women</Link></li>
                             <li className='nav-items'><Link className='navLinkItems'>Combos</Link></li>
