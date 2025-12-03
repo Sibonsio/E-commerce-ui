@@ -39,14 +39,14 @@ const SignupBar = () => {
                 <div className={`login ${location.pathname !== '/signin' && location.pathname !== '/signup' && 'reduceWidth'}`}>
                     <input className='input' type='text' placeholder='Search' />
                     <div className='buttons'>
-                        <p>{isWidth}</p>
+                        {/*<p>{isWidth}</p>*/}
                         <button className={`usercartContainer searchbtncolor ${isWidth > 1266 && 'searchbtn'} ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'}`}><img className='usercartLogo' src={search} /></button>
                         <button className={`usercartContainer ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'}`}><img className='usercartLogo' src={heart} /></button>
                         <button className={`usercartContainer ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'}`}><img className='usercartLogo' src={user} /></button>
                         <button className={`usercartContainer ${location.pathname === '/signin' && 'remove' || location.pathname === '/signup' && 'remove'}`}><img className='usercartLogo' src={cart} /></button>
                         <button className={location.pathname === '/signin' && `signupbtn` || location.pathname === '/signup' && `loginbtn` || location.pathname !== '/signin' && location.pathname !== '/signup' && 'remove'}><Link className={location.pathname === '/signin' ? 'link-item2' : 'link-item1'} to={'/signin'}>Login</Link></button>
                         <button className={location.pathname === '/signup' && `signupbtn` || location.pathname === '/signin' && `loginbtn` || location.pathname !== '/signin' && location.pathname !== '/signup' && 'remove'}><Link className={location.pathname === '/signup' ? 'link-item2' : 'link-item1'} to={'/signup'}>Sign Up</Link></button>
-                        <Menu className={`menu ${isWidth > 1090 && 'hidemenu'}`} />
+                        <Menu className={`menu ${isWidth > 1090 && 'hidemenu' || location.pathname === '/signin' && 'hidemenu' || location.pathname === '/signup' && 'hidemenu'}`} />
                     </div>
                 </div>
             </div>

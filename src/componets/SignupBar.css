@@ -180,7 +180,7 @@
     }
 
     .login {
-        justify-content: space-between;
+        justify-content: flex-end;
         width: 20%;
         gap: 10px;
     }

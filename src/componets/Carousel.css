@@ -1,0 +1,79 @@
+.carousel {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.carouselContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.errowbtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.errowbtn:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.left {
+    left: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.right {
+    right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.lefterrow,
+.righterrow {
+    color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+}
+
+.circle {
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: white;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dots:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}

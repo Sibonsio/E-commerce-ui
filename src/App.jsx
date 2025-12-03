@@ -3,6 +3,7 @@ import SigninHero from './componets/LoginHero.jsx'
 import SignLayout from './componets/SignLayout.jsx'
 import { Route, Routes } from 'react-router'
 import SignupHero from './componets/SignupHero.jsx'
+import Shop from './pages/Shop.jsx'
 
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<SignLayout />}>
+          <Route path='/' element={<Shop />} />
           <Route path='/signin' element={<SigninHero />} />
           <Route path='/signup' element={<SignupHero />} />
         </Route>
