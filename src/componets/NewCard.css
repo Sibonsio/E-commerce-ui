@@ -1,0 +1,27 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 240px;
+    background-color: white;
+}
+
+.imageCardContainer {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+
+.imagearrival {
+    width: 100%;
+    height: 100%;
+}
+
+.cardarrivalheading {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3C4242;
+
+}

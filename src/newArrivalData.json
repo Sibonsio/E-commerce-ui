@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "heading": "Knitted Joggers",
+        "image": "../src/assets/newarrival1.png"
+    },
+    {
+        "id": 2,
+        "heading": "Full Sleeve",
+        "image": "../src/assets/newarrival2.png"
+    },
+    {
+        "id": 3,
+        "heading": "Active T-Shirts",
+        "image": "../src/assets/newarrival3.png"
+    },
+    {
+        "id": 4,
+        "heading": "Urban Shirts",
+        "image": "../src/assets/newarrival4.png"
+    },
+    {
+        "id": 5,
+        "heading": "Knitted Joggers",
+        "image": "../src/assets/newarrival1.png"
+    },
+    {
+        "id": 6,
+        "heading": "Full Sleeve",
+        "image": "../src/assets/newarrival2.png"
+    },
+    {
+        "id": 5,
+        "heading": "Knitted Joggers",
+        "image": "../src/assets/newarrival1.png"
+    },
+    {
+        "id": 6,
+        "heading": "Full Sleeve",
+        "image": "../src/assets/newarrival2.png"
+    }
+]

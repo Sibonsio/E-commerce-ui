@@ -1,0 +1,36 @@
+.cardsSectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 100px auto;
+    width: 90%;
+}
+
+.newarrivalcards {
+    gap: 20px;
+    width: 98%;
+    margin: 50px auto;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.newarrivalcards::-webkit-scrollbar {
+    display: none;
+}
+
+.cardBtnContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nextBtn {
+    border: none;
+    background-color: white;
+    height: fit-content;
+}
+
+.clickNextBtn {
+    color: #3C4242;
+}
