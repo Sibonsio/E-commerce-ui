@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "heading": "Hawaiian Shirts",
+        "subheading": "Dress Up In Summer Vibe",
+        "image": "../src/assets/Rectangle74.png",
+        "upto": "UPTO 50% OFF",
+        "textSide": "none",
+        "padding": "none",
+        "color": "none",
+        "boaderColor": "none"
+    },
+    {
+        "id": 2,
+        "heading": "Printed T-Shirts",
+        "subheading": "New Designs Every Week",
+        "image": "../src/assets/Rectangle75.png",
+        "upto": "UPTO 40% OFF",
+        "textSide": "right",
+        "padding": "padding",
+        "color": "none",
+        "boaderColor": "none"
+    },
+    {
+        "id": 3,
+        "heading": "Cargo Joggers",
+        "subheading": "Move With Style & Comfort",
+        "image": "../src/assets/Rectangle76.png",
+        "upto": "UPTO 50% OFF",
+        "textSide": "right",
+        "padding": "padding",
+        "color": "color",
+        "boaderColor": "boaderColor"
+    }
+]

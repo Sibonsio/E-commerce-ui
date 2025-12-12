@@ -9,7 +9,7 @@ const NewArrivalCards = () => {
     const scrollRef = useRef()
     const leftScroll = () => {
         scrollRef.current.scrollBy({
-            right: 300,
+            left: -300,
             behavior: 'smooth'
         })
     }

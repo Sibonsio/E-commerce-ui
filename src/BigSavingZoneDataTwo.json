@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "heading": "Urbarn Shirts",
+        "subheading": "Live In Confort",
+        "image": "../src/assets/Rectangle77.png",
+        "upto": "FLAT 60% OFF",
+        "textSide": "right",
+        "padding": "margin",
+        "color": "color",
+        "boaderColor": "boaderColor"
+    },
+    {
+        "id": 2,
+        "heading": "Oversized T-Shirts",
+        "subheading": "Street Style Icon",
+        "image": "../src/assets/Rectangle78.png",
+        "upto": "FLAT 60% OFF",
+        "textSide": "right",
+        "padding": "margin",
+        "color": "color",
+        "boaderColor": "boaderColor"
+    }
+]

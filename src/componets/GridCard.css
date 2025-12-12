@@ -1,0 +1,73 @@
+.gridcardContainer {
+    position: relative;
+    width: 460px;
+    height: 460px;
+}
+
+.gridImage {
+    width: 100%;
+    height: 100%;
+}
+
+.gridtextContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    width: 140px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    height: 250px;
+}
+
+.gridHeading {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.gridSubheading {
+    font-size: 10px;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+.gridUpto {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.subheadingContainer {
+    width: 100%;
+}
+
+.gridBtn {
+    width: 110px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.arrowdown {
+    margin-left: 45px;
+    height: 30px;
+}
+
+.padding {
+    margin-right: 10px;
+}
+
+.color {
+    color: #3C4242;
+}
+
+.boaderColor {
+    border-color: #3C4242;
+}
