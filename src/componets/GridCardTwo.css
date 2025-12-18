@@ -1,7 +1,7 @@
 .gridcardContainerTwo {
     position: relative;
-    width: 701px;
-    height: 450px;
+    width: 50%;
+    height: inherit;
 }
 
 .margin {

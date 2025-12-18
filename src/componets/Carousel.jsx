@@ -33,7 +33,7 @@ const Carousel = () => {
     }, [currentIndex, interval])
     return (
         <div className='carousel'>
-            <button className='errowbtn left' onClick={prevImage}><ChevronLeft className='lefterrow' /></button>
+
             <section className='carouselContainer'>
                 <img className='carouselImage' src={images[currentIndex]} />
                 <article className='textCarousel'>
@@ -41,8 +41,8 @@ const Carousel = () => {
                     <p className='subHeading'>{carouselData[currentIndex].subHeading}</p>
                     <button className='shopbtn'><Link className='shoplinkbtn' to='#'>Shop Now</Link></button>
                 </article>
-
             </section>
+            <button className='errowbtn left' onClick={prevImage}><ChevronLeft className='lefterrow' /></button>
             <button className='errowbtn right' onClick={nextImage}><ChevronRight className='righterrow' /></button>
             <div className='dots'>{images.map((_, index) => {
                 return <button key={index} className={`circle ${currentIndex === index && 'active'}`} onClick={() => { setCurrentIndex(index) }} ></button>

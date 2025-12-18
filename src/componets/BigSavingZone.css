@@ -5,17 +5,19 @@
 
 .flexContainerOne {
     display: flex;
-    justify-content: space-between;
     margin-top: 50px;
+    gap: 20px;
+
 }
 
 .flexContainerTwo {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+
 }
 
 .flexGrid {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
