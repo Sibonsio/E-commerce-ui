@@ -1,0 +1,77 @@
+.grassSection {
+    display: flex;
+    width: 90%;
+    margin: 0 auto 100px auto;
+    border-radius: 10px;
+}
+
+.grassTextSection {
+    background-image: url(../assets/grass.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grassTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    gap: 30px;
+    color: white;
+}
+
+.grassimage {
+    object-fit: cover;
+    height: 100%;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    width: 100%;
+}
+
+.grassimageSection {
+    width: 50%;
+}
+
+.grassHeading {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.grassSubheading {
+    font-size: 15px;
+    font-weight: 300;
+    width: 80%;
+}
+
+.grassBtn {
+    width: 150px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: white;
+    color: #3C4242;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@media (max-width:1090px) {
+    .grassimageSection {
+        display: none;
+    }
+
+    .grassTextSection {
+        width: 100%;
+        height: 700px;
+    }
+
+    .grassSection,
+    .grassTextContainer,
+    .grassTextSection {
+        border-radius: 10px;
+    }
+}

@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
-    height: 250px;
+    height: inherit;
 }
 
 .gridHeading {
@@ -71,4 +71,12 @@
 
 .boaderColor {
     border-color: #3C4242;
+}
+
+@media (max-width:1090px) {
+
+    .gridcardContainer {
+        width: 100%;
+    }
+
 }

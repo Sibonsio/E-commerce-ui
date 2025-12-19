@@ -33,7 +33,6 @@ const Carousel = () => {
     }, [currentIndex, interval])
     return (
         <div className='carousel'>
-
             <section className='carouselContainer'>
                 <img className='carouselImage' src={images[currentIndex]} />
                 <article className='textCarousel'>
